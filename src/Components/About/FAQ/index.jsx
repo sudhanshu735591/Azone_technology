@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 
 export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
-
+  const navigate = useNavigate()
   useEffect(() => {
     setIsVisible(true);
   }, []);
@@ -16,82 +17,30 @@ export default function FAQPage() {
 
   const faqItems = [
     {
-      question: "Are there any special discounts or promotions available during the event?",
-      answer: "Yes! We often provide early bird discounts for attendees who register in advance. Additionally, we offer group discounts for parties of 5 or more. Follow us on social media or subscribe to our newsletter to stay updated on the latest promotions and special offers."
+      question: "Can senior secondry (10+2) students apply?",
+      answer: "No! Because there are already burden of the board exams and subject in all aspects, so we recommend to join just on or before taking admission in graduation."
     },
     {
-      question: "What are the dates and locations for the product launch events?",
+      question: "What will be the duration of the full stack program?",
       answer: (
         <>
-          <p>Our product launch tour includes the following dates and locations:</p>
-          <ul className="list-disc pl-5 mt-2 space-y-1">
-            <li>New York - June 15-17, 2023</li>
-            <li>San Francisco - June 22-24, 2023</li>
-            <li>Chicago - July 6-8, 2023</li>
-            <li>Miami - July 13-15, 2023</li>
-          </ul>
-          <p className="mt-3">
-            Additional dates may be added based on demand. Check our website regularly for updates.
-          </p>
+          <p>The duration of the course is 10 months from the starting date of the batch but it may extend as per the requirements</p>
         </>
       )
     },
     {
-      question: "Can I bring a guest with me to the product launch event?",
-      answer: "Yes, you can bring one guest per registration. When registering, please indicate that you'll be bringing a guest and provide their name. All guests must be registered in advance - we cannot accommodate walk-in guests due to venue capacity and security requirements."
+      question: "Will I get quick placement after completion of the course?",
+      answer: "Our institute provides comprehensive placement support, guiding students through every step of the process—from professional resume building and LinkedIn profile optimization to job search strategies. Additionally, we offer referral assistance by forwarding qualified resumes to our industry network for interview opportunities. Please note that while we strive to facilitate placements, securing a job ultimately depends on individual performance and employer requirements."
     },
     {
-      question: "How can I register for the event?",
+      question: "How can I register for this program?",
       answer: (
         <>
-          <p>Registration is simple and can be completed online:</p>
-          <ol className="list-decimal pl-5 mt-2 space-y-1">
-            <li>Visit our events page and select the event you wish to attend</li>
-            <li>Click the 'Register Now' button</li>
-            <li>Complete the registration form with your details</li>
-            <li>Choose any additional options (guest, workshops, etc.)</li>
-            <li>Submit payment if required</li>
-            <li>You'll receive a confirmation email with your ticket</li>
-          </ol>
+          <p>For join our program you can simply fill up the form details in <span onClick={()=>navigate("/contact")} className='cursor-pointer text-blue-900 font-bold text-sm'>CONTACT SECTION</span> by your contact number, our team will reach out to you shortly.</p>
         </>
       )
     },
-    {
-      question: "Is there parking available at the venue?",
-      answer: (
-        <>
-          <p>Parking availability varies by venue:</p>
-          <ul className="list-disc pl-5 mt-2 space-y-1">
-            <li><strong>New York:</strong> Limited paid parking available nearby (not included in ticket)</li>
-            <li><strong>San Francisco:</strong> Complimentary valet parking for attendees</li>
-            <li><strong>Chicago:</strong> Discounted parking at adjacent garage with validation</li>
-            <li><strong>Miami:</strong> Free on-site parking available</li>
-          </ul>
-          <p className="mt-3">
-            We recommend checking the specific venue details in your confirmation email
-            or using rideshare services when possible.
-          </p>
-        </>
-      )
-    },
-    {
-      question: "How can I contact the event organizers?",
-      answer: (
-        <>
-          <p>Our event team is happy to help with any questions or special requests:</p>
-          <ul className="list-disc pl-5 mt-2 space-y-1">
-            <li><strong>Email:</strong> events@yourcompany.com</li>
-            <li><strong>Phone:</strong> (555) 123-4567 (9am-5pm EST, Mon-Fri)</li>
-            <li><strong>On-site:</strong> Visit the registration desk at any event</li>
-          </ul>
-          <p className="mt-3">
-            For fastest response, please include your registration number in any communications.
-          </p>
-        </>
-      )
-    }
   ];
-
   return (
     <div className="min-h-screen py-28 px-4 sm:px-10">
       <div className="max-w-7xl mx-auto space-y-6">
@@ -182,14 +131,16 @@ export default function FAQPage() {
         >
           <h3 className="text-xl font-medium text-gray-800 mb-4">Still have questions?</h3>
           <motion.button 
-            className="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="cursor-pointer bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
             whileHover={{ scale: 1.05, boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.4)" }}
             whileTap={{ scale: 0.98 }}
+            onClick={()=>navigate("/contact")}
           >
             Contact Our Support Team
           </motion.button>
         </motion.div>
       </div>
-    </div>
+    </div> 
+    
   );
 }

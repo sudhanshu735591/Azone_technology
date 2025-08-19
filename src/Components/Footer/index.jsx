@@ -15,7 +15,7 @@ function Footer() {
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path fill="currentColor" d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7v-7h-2v-3h2V8.5A3.5 3.5 0 0 1 15.5 5H18v3h-2a1 1 0 0 0-1 1v2h3v3h-3v7h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/>
-        </svg>
+        </svg>  
       )
     },
     {
@@ -45,17 +45,16 @@ function Footer() {
   ];
 
   const usefulLinks = [
-    { name: "Featured", url: "#" },
-    { name: "New Arrivals", url: "#" },
-    { name: "Best Sellers", url: "#" },
-    { name: "Special Offers", url: "#" }
+    { name: "Home", url: "#" },
+    { name: "About Us", url: "/about" },
+    { name: "Services", url: "/services" },
+    { name: "Career", url: "/career" },
+    { name: "Contact", url: "/contact" }
   ];
 
   const informationLinks = [
-    { name: "About Us", url: "#" },
-    { name: "Terms & Conditions", url: "#" },
-    { name: "Privacy Policy", url: "#" },
-    { name: "Contact Us", url: "#" },
+    { name: "Terms & Conditions", url: "/" },
+    { name: "Privacy Policy", url: "/" },
     { name: "FAQ", url: "#" }
   ];
 
@@ -72,10 +71,7 @@ function Footer() {
           {/* Logo and description */}
           <div className="space-y-6">
             
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Creating beautiful, functional interfaces that users love. Join us on our journey to design excellence.
-            </p>
-            
+           
             {/* Social links with animation */}
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import Courses from "./courses";
+import { useNavigate } from "react-router-dom";
 
 const Growth = () => {
   // Floating text animation data
@@ -10,11 +11,12 @@ const Growth = () => {
     { text: "Grow", top: "70%", left: "15%", delay: 1 },
     { text: "Code", top: "60%", left: "75%", delay: 1.5 },
   ];
+  const navigate = useNavigate();
 
   // Course data
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen ">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
         {/* Floating text background */}
@@ -99,10 +101,10 @@ const Growth = () => {
                 href="#student"
                 className="relative px-10 py-4 border border-transparent text-lg font-semibold rounded-xl text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
-                <span className="relative z-10">Enroll as Student</span>
+                <span onClick={()=>navigate("/contact")} className="relative z-10">Enroll as Student</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-indigo-700 to-purple-700 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               </motion.a>
-
+{/* 
               <motion.a
                 whileHover={{ y: -3 }}
                 whileTap={{ scale: 0.98 }}
@@ -111,7 +113,7 @@ const Growth = () => {
               >
                 <span className="relative z-10">Apply as Mentor</span>
                 <span className="absolute inset-0 bg-indigo-100 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              </motion.a>
+              </motion.a> */}
             </motion.div>
 
             {/* Decorative elements */}
