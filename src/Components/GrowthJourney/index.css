@@ -1,0 +1,20 @@
+@keyframes textReveal {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+  
+  .animate-text-reveal {
+    display: inline-block;
+    animation: textReveal 1.5s ease-in-out infinite;
+  }
+  
