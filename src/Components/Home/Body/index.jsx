@@ -140,7 +140,7 @@ function Body() {
             className="text-2xl sm:text-2xl md:text-2xl lg:text-3xl font-semibold md:font-bold mt-4 lg:mt-10 mb-4 leading-tight text-black"
           >
             <motion.span variants={floatingVariants} animate="floatSlow">
-              Web Development Digital Program (Online Class)
+              Web Development Program
             </motion.span>
           </motion.h2>
         </motion.section>
