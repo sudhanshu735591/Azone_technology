@@ -244,7 +244,7 @@ const Growth = () => {
                   </motion.a>
                 </div>
 
-                <div className="mt-10 flex items-center space-x-6">
+                {/* <div className="mt-10 flex items-center space-x-6">
                   <div className="flex -space-x-2">
                     {[1, 2, 3, 4].map((item) => (
                       <img
@@ -281,7 +281,7 @@ const Growth = () => {
                       </span>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </motion.div>
             </div>
 
