@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Footer() {
   const [visible, setVisible] = useState(false);
   const [showTermsModal, setShowTermsModal] = useState(false);
   
   useEffect(() => {
-    // Trigger animation when component mounts
     setVisible(true);
   }, []);
 
@@ -46,7 +45,7 @@ function Footer() {
   ];
 
   const usefulLinks = [
-    { name: "Home", url: "#" },
+    { name: "Home", url: "/" },
     { name: "About Us", url: "/about" },
     { name: "Services", url: "/services" },
     { name: "Career", url: "/career" },
@@ -55,8 +54,7 @@ function Footer() {
 
   const informationLinks = [
     { name: "Terms & Conditions", url: "#", onClick: () => setShowTermsModal(true) },
-    { name: "Privacy Policy", url: "/" },
-    { name: "FAQ", url: "#" }
+    { name: "FAQ (In About section)", url: "#" }
   ];
 
   const closeModal = () => {
@@ -167,13 +165,8 @@ function Footer() {
           {/* Copyright */}
           <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} ReadymadeUI. All rights reserved.
+              © {new Date().getFullYear()} Azone Institute of Technology. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" onClick={() => setShowTermsModal(true)} className="text-gray-500 hover:text-white text-sm transition-colors duration-300 cursor-pointer">Terms of Service</a>
-              <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>
-              <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors duration-300">Cookie Policy</a>
-            </div>
           </div>
         </div>
 
