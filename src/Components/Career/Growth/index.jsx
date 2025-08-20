@@ -213,10 +213,11 @@ const Growth = () => {
 
                 <div className="flex flex-wrap gap-4">
                   <motion.a
-                    href="#"
+                    href="/contact"
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.98 }}
                     className="px-8 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center"
+                    
                   >
                     Apply Now
                     <svg
