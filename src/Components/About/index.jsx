@@ -225,7 +225,7 @@ function About() {
             <div className="space-y-6">
               <h2 className="md:text-4xl text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-800 animate-text-float">
                 Communication Flow Between{" "}
-                <span className="animate-text-float-delay">
+                <span className="animate-text-float-delay text-green-600">
                   Interview Panel and Interviewee
                 </span>
               </h2>
