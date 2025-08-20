@@ -135,7 +135,7 @@ function Features() {
           <div className="bg-white p-6 shadow rounded-md hover:scale-105 transition-transform duration-300">
             <h3 className="text-gray-800 text-xl font-bold mb-2">Support</h3>
             <p className="text-sm text-gray-600">
-              10:00 AM to 06:00 PM support for all your inquiries. (Saturday- Sunday off)
+              10:00 AM to 06:00 PM support for all your inquiries. 
             </p>
           </div>
           <div className="bg-white p-6 shadow rounded-md hover:scale-105 transition-transform duration-300">

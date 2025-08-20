@@ -13,7 +13,7 @@ function Performance() {
       description:
         "Our 100% practical program emphasizes logic-building abilities, covering front-end and back-end development, along with in-depth training in database management, ensuring students gain real-world coding experience and a strong foundation in software development.",
       backtext:
-        "As the IT industry continues to grow rapidly, we are offering specialized courses for graduates, including B.Tech, M.Tech, BCA, and MCA students, who are eager to enhance their technical skills. This program is especially designed for passionate learners who face financial constraints. In support of inclusive education, we are proud to offer this course completely free for students from minority backgrounds.",
+        "As the IT industry continues to grow rapidly, we are offering specialized courses for graduates, including B.Tech, M.Tech, BCA, and MCA students, who are eager to enhance their technical skills. This program is especially designed for passionate learners who face financial constraints. In support of inclusive education, we are proud to offer this course specially for all the minorities",
     },
     {
       step: "10+2 / POLYTECHNIC (CS/IT)",
@@ -240,13 +240,13 @@ function Performance() {
                           {service.backtext}
                         </motion.p>
                         <motion.a 
-                          href="#enroll" 
+                          href="/contact" 
                           className="inline-block mt-2 sm:mt-4"
                           variants={floatingVariants}
                           animate="floatFast"
                         >
                           <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-3 px-6 sm:py-3 sm:px-8 rounded-full inline-flex items-center transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-500/30">
-                            <span className="text-sm sm:text-base font-semibold">Enroll Now</span>
+                            <span className="text-sm sm:text-base font-semibold cursor-pointer">Enroll Now</span>
                             <WrenchScrewdriverIcon className="h-5 w-5 ml-2" />
                           </button>
                         </motion.a>

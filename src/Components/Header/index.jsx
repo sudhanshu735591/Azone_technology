@@ -93,12 +93,12 @@ function Header() {
                 </li>
               ))}
             </ul>
-            <button
+            {/* <button
               className="cursor-pointer transition duration-150 ease-in-out mt-4 md:mt-0 rounded-full bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none md:ml-4 hover:animate-bounce"
               type="button"
             >
               Sign Up Now
-            </button>
+            </button> */}
           </div>
         </div>
       </nav>

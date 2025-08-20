@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Footer from '../Footer';
@@ -7,18 +8,20 @@ const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        message: ''
+        message: '',
+        agreeToTerms: false
     });
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitSuccess, setSubmitSuccess] = useState(false);
     const [hoveredField, setHoveredField] = useState(null);
+    const [showTermsModal, setShowTermsModal] = useState(false);
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
+        const { name, value, type, checked } = e.target;
         setFormData(prev => ({
             ...prev,
-            [name]: value
+            [name]: type === 'checkbox' ? checked : value
         }));
     };
 
@@ -31,6 +34,7 @@ const Contact = () => {
             newErrors.email = 'Please enter a valid email';
         }
         if (!formData.message.trim()) newErrors.message = 'Message is required';
+        if (!formData.agreeToTerms) newErrors.agreeToTerms = 'You must accept the terms and conditions';
         return newErrors;
     };
 
@@ -65,7 +69,7 @@ const Contact = () => {
         .then(data => {
             setIsSubmitting(false);
             setSubmitSuccess(true);
-            setFormData({ name: '', email: '', message: '' });
+            setFormData({ name: '', email: '', message: '', agreeToTerms: false });
         })
         .catch(error => {
             console.error('Error:', error);
@@ -246,7 +250,7 @@ const Contact = () => {
                                                         value={formData.email}
                                                         onChange={handleChange}
                                                         className={`block w-full pl-10 pr-4 py-3 rounded-lg ${errors.email ? 'border-red-300 text-red-900 placeholder-red-300 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500'} border focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-all duration-200`}
-                                                        placeholder="you@example.com"
+                                                        placeholder="john@gmail.com"
                                                     />
                                                     {hoveredField === 'email' && (
                                                         <motion.div
@@ -292,7 +296,7 @@ const Contact = () => {
                                                         value={formData.message}
                                                         onChange={handleChange}
                                                         className={`block w-full pl-10 pr-4 py-3 rounded-lg ${errors.message ? 'border-red-300 text-red-900 placeholder-red-300 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500'} border focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-all duration-200`}
-                                                        placeholder="Tell us about your project..."
+                                                        placeholder="Which specific course are you interested in joining..."
                                                     />
                                                     {hoveredField === 'message' && (
                                                         <motion.div
@@ -317,13 +321,54 @@ const Contact = () => {
                                                 </div>
                                             </motion.div>
 
+                                            {/* Terms and Conditions Checkbox */}
+                                            <motion.div
+                                                variants={fieldVariants}
+                                                className="flex items-start"
+                                            >
+                                                <div className="flex items-center h-5">
+                                                    <input
+                                                        id="agreeToTerms"
+                                                        name="agreeToTerms"
+                                                        type="checkbox"
+                                                        checked={formData.agreeToTerms}
+                                                        onChange={handleChange}
+                                                        className={`focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded ${errors.agreeToTerms ? 'border-red-300' : ''}`}
+                                                    />
+                                                </div>
+                                                <div className="ml-3 text-sm">
+                                                    <label htmlFor="agreeToTerms" className="font-medium text-gray-700">
+                                                        I agree to the{' '}
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => setShowTermsModal(true)}
+                                                            className="text-blue-600 hover:text-blue-500 underline"
+                                                        >
+                                                            Terms and Conditions
+                                                        </button>
+                                                    </label>
+                                                    {errors.agreeToTerms && (
+                                                        <motion.p
+                                                            initial={{ opacity: 0, y: -10 }}
+                                                            animate={{ opacity: 1, y: 0 }}
+                                                            className="mt-1 text-sm text-red-600 flex items-center"
+                                                        >
+                                                            <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                                                            </svg>
+                                                            {errors.agreeToTerms}
+                                                        </motion.p>
+                                                    )}
+                                                </div>
+                                            </motion.div>
+
                                             <motion.div variants={fieldVariants}>
                                                 <motion.button
                                                     type="submit"
                                                     disabled={isSubmitting}
                                                     whileHover={!isSubmitting ? { scale: 1.02, boxShadow: "0 10px 25px -5px rgba(59, 130, 246, 0.4)" } : {}}
                                                     whileTap={!isSubmitting ? { scale: 0.98 } : {}}
-                                                    className={`w-full flex justify-center items-center py-4 px-6 border border-transparent rounded-xl shadow-sm text-lg font-medium text-white ${isSubmitting ? 'bg-blue-900' : 'bg-[#081C3A]'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300`}
+                                                    className={`cursor-pointer w-full flex justify-center items-center py-4 px-6 border border-transparent rounded-xl shadow-sm text-lg font-medium text-white ${isSubmitting ? 'bg-blue-900' : 'bg-[#081C3A]'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300`}
                                                 >
                                                     {isSubmitting ? (
                                                         <>
@@ -374,30 +419,13 @@ const Contact = () => {
                                             <div className="flex-shrink-0">
                                                 <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center">
                                                     <svg className="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <div className="ml-4">
-                                                <h3 className="text-sm font-medium text-blue-100">Email</h3>
-                                                <p className="text-lg text-white">contact@example.com</p>
-                                            </div>
-                                        </motion.div>
-
-                                        <motion.div
-                                            whileHover={{ x: 5 }}
-                                            className="flex items-start bg-white/10 p-5 rounded-xl backdrop-blur-sm border border-white/10"
-                                        >
-                                            <div className="flex-shrink-0">
-                                                <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center">
-                                                    <svg className="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                                     </svg>
                                                 </div>
                                             </div>
                                             <div className="ml-4">
                                                 <h3 className="text-sm font-medium text-blue-100">Phone</h3>
-                                                <p className="text-lg text-white">+971 0522125656</p>
+                                                <p className="text-lg text-white">+91 7355913935</p>
                                             </div>
                                         </motion.div>
 
@@ -415,7 +443,7 @@ const Contact = () => {
                                             </div>
                                             <div className="ml-4">
                                                 <h3 className="text-sm font-medium text-blue-100">Address</h3>
-                                                <p className="text-lg text-white">Industrial Area, Dubai Mainland, UAE</p>
+                                                <p className="text-lg text-white">Ballia, Uttar Pradesh</p>
                                             </div>
                                         </motion.div>
 

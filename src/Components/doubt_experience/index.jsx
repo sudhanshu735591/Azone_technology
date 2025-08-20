@@ -11,7 +11,7 @@ function Experience_and_Doubt() {
           </h1>
           <div className="text-lg md:text-xl leading-relaxed">
             <p className="mb-4 text-start text-black">
-              <span className="text-blue-600">A</span> – Accessible Tech Education <span className="text-blue-600">(40% off for minorities)</span>, affordable for
+              <span className="text-blue-600">A</span> – Accessible Tech Education <span className="text-blue-600"></span>, affordable for
               all) <br/><span className="text-blue-600">Z</span> – Zero to Hero (From beginner to job-ready, at minimal
               cost) <br/><span className="text-blue-600">O</span> – Outcome-Focused (Theory + hands-on training for
               real-world impact) <br/><span className="text-blue-600">N</span> – Next-Gen Skills (AI, Coding, Cybersecurity,
