@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Footer from '../Footer';
@@ -8,6 +7,7 @@ const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
+        phone: '',
         message: '',
         agreeToTerms: false
     });
@@ -32,6 +32,11 @@ const Contact = () => {
             newErrors.email = 'Email is required';
         } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
             newErrors.email = 'Please enter a valid email';
+        }
+        if (!formData.phone.trim()) {
+            newErrors.phone = 'Phone number is required';
+        } else if (!/^[0-9+\-\s()]{10,}$/.test(formData.phone)) {
+            newErrors.phone = 'Please enter a valid phone number';
         }
         if (!formData.message.trim()) newErrors.message = 'Message is required';
         if (!formData.agreeToTerms) newErrors.agreeToTerms = 'You must accept the terms and conditions';
@@ -69,7 +74,7 @@ const Contact = () => {
         .then(data => {
             setIsSubmitting(false);
             setSubmitSuccess(true);
-            setFormData({ name: '', email: '', message: '', agreeToTerms: false });
+            setFormData({ name: '', email: '', phone: '', message: '', agreeToTerms: false });
         })
         .catch(error => {
             console.error('Error:', error);
@@ -270,6 +275,53 @@ const Contact = () => {
                                                                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                                                             </svg>
                                                             {errors.email}
+                                                        </motion.p>
+                                                    )}
+                                                </div>
+                                            </motion.div>
+
+                                            {/* Phone Number Field */}
+                                            <motion.div
+                                                variants={fieldVariants}
+                                                onHoverStart={() => setHoveredField('phone')}
+                                                onHoverEnd={() => setHoveredField(null)}
+                                            >
+                                                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                                                    Phone Number
+                                                </label>
+                                                <div className="mt-1 relative rounded-md shadow-sm">
+                                                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                                        <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                                        </svg>
+                                                    </div>
+                                                    <input
+                                                        type="tel"
+                                                        id="phone"
+                                                        name="phone"
+                                                        value={formData.phone}
+                                                        onChange={handleChange}
+                                                        className={`block w-full pl-10 pr-4 py-3 rounded-lg ${errors.phone ? 'border-red-300 text-red-900 placeholder-red-300 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 text-gray-900 placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500'} border focus:outline-none focus:ring-2 focus:ring-opacity-50 transition-all duration-200`}
+                                                        placeholder="+91 1234567890"
+                                                    />
+                                                    {hoveredField === 'phone' && (
+                                                        <motion.div
+                                                            initial={{ width: 0 }}
+                                                            animate={{ width: '100%' }}
+                                                            className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-blue-400 to-indigo-500"
+                                                            transition={{ duration: 0.3 }}
+                                                        />
+                                                    )}
+                                                    {errors.phone && (
+                                                        <motion.p
+                                                            initial={{ opacity: 0, y: -10 }}
+                                                            animate={{ opacity: 1, y: 0 }}
+                                                            className="mt-2 text-sm text-red-600 flex items-center"
+                                                        >
+                                                            <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                                                            </svg>
+                                                            {errors.phone}
                                                         </motion.p>
                                                     )}
                                                 </div>
