@@ -54,7 +54,7 @@ function Facilities() {
           </h2>
           <div className="w-40 h-1 bg-orange-400 mx-auto mb-6 rounded-full"></div>
           <p className="text-white text-center mt-5 text-lg md:text-xl lg:text-2xl max-w-2xl mx-auto leading-relaxed">
-            We always do our best in serving our customers and give them a satisfied impression.
+            We always provide best education to our students and give them a satisfied impression.
           </p>
         </section>
 
