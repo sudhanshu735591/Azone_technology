@@ -150,7 +150,7 @@ function Body() {
           initial="hidden"
           animate={contentInView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="flex flex-col-reverse lg:flex-row items-center gap-10 mt-6 max-w-7xl mx-auto px-4 sm:px-6 md:px-8"
+          className="flex flex-col-reverse lg:flex-row items-center gap-20 mt-6  mx-auto px-4 sm:px-6 md:px-8"
         >
           <motion.div variants={slideUpVariants} className="w-full lg:w-1/2">
             <motion.p
@@ -219,7 +219,7 @@ Join AZONE and unlock your potential in the world of technology—without any co
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={contentInView ? { scale: 1, opacity: 1 } : {}}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                src="./azoneImage.jpg"
+                src="./logo3.png"
                 className="h-auto max-h-[400px] object-contain rounded-2xl shadow-xl border-4 border-white"
                 alt="Azone"
                 style={{ boxShadow: "0 10px 25px rgba(0,0,0,0.2)" }}

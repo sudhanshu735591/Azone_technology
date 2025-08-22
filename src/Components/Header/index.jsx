@@ -23,7 +23,7 @@ function Header() {
       <nav className="border-gray-200 px-4 lg:px-6 py-2.5">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-lg relative">
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-            <img src="./logo.png" alt="Logo" className="h-10" />
+            <img src="./logo1.png" alt="Logo" className="h-10 rounded-full" />
           </span>
           
           {/* Mobile menu button */}
