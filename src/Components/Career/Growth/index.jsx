@@ -351,27 +351,7 @@ const Growth = () => {
                   ))}
                 </ul>
 
-                <div className="mt-8 pt-6 border-t border-gray-100">
-                  <div className="flex items-center">
-                    <svg
-                      className="w-5 h-5 text-blue-600 mr-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      ></path>
-                    </svg>
-                    <span className="text-sm text-gray-600">
-                      Next cohort starts:{" "}
-                      <span className="font-semibold">June 15, 2024</span>
-                    </span>
-                  </div>
-                </div>
+              
               </motion.div>
             </div>
           </div>
