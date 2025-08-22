@@ -42,11 +42,8 @@ const WebDevelopmentServices = () => {
     <div className="relative min-h-screen overflow-hidden">
       {/* Background video with overlay */}
       <div className="absolute inset-0 z-0">
-        <video
-          src="https://www.netguru.com/hubfs/_N19%20Modules/Homepage/Videos/ng-com-header-background.mp4"
-          autoPlay
-          muted
-          loop
+        <img
+          src=""
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-opacity-60"></div>
@@ -75,17 +72,17 @@ const WebDevelopmentServices = () => {
       <div className="relative z-10 container mx-auto px-4 py-12 lg:py-24">
         {/* Animated header */}
         <div className={`transition-all duration-1000 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center text-white uppercase mb-4">
-            Why <span className="text-yellow-400 animate-pulse">Choose Us</span>
+          <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-center text-blue-900 uppercase mb-4">
+            Why <span className="text-blue-900 animate-bounce">Choose Us</span>
           </h1>
-          <div className="w-32 h-1 bg-yellow-400 mx-auto mb-8 rounded-full"></div>
+          <div className="w-32 h-1 bg-blue-400 mx-auto mb-8 rounded-full"></div>
         </div>
 
         {/* Floating description text */}
-        <div className={`max-w-4xl mx-auto transition-all duration-1000 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+        <div className={`max-w-7xl mx-auto transition-all duration-1000 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           style={{ transitionDelay: '300ms' }}>
           <div className="relative">
-            <p className="text-white text-lg md:text-xl text-center leading-relaxed animate-float-slow">
+            <p className="text-black text-lg md:text-xl text-start leading-relaxed">
               Our primary objective is not merely to ensure course completion, but to empower each individual with responsibilities aligned with their skill level. We assess every student thoroughly before enrollment and provide personalized guidance throughout their learning journey.
             </p>
           </div>
@@ -100,7 +97,7 @@ const WebDevelopmentServices = () => {
               style={{ transitionDelay: `${500 + (index * 200)}ms` }}
             >
               <div className="bg-opacity-10 backdrop-blur-md rounded-xl p-6 h-full flex flex-col hover:bg-opacity-20 transition-all duration-300 hover:shadow-lg hover:shadow-yellow-400/20 hover:-translate-y-2 border border-white border-opacity-20">
-                <h2 className="text-xl md:text-2xl font-bold text-yellow-300 mb-4">
+                <h2 className="text-xl md:text-2xl font-bold text-black mb-4">
                   {val.heading}
                 </h2>
                 <div className="relative overflow-hidden rounded-lg mb-4 aspect-video">
@@ -110,7 +107,7 @@ const WebDevelopmentServices = () => {
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
-                <p className="text-white text-base md:text-lg flex-grow">
+                <p className="text-black text-base md:text-lg flex-grow">
                   {val.description}
                 </p>
               </div>
@@ -121,7 +118,7 @@ const WebDevelopmentServices = () => {
         {/* Animated CTA */}
         <div className={`mt-16 text-center transition-all duration-1000 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
           style={{ transitionDelay: '1100ms' }}>
-          <button className="px-8 py-3 bg-yellow-400 text-gray-900 font-bold rounded-full hover:bg-yellow-500 transition-all duration-300 shadow-lg hover:shadow-yellow-400/50 transform hover:scale-105 animate-bounce">
+          <button className="px-8 py-3  text-gray-900 font-bold rounded-full hover:bg-yellow-500 transition-all duration-300 shadow-lg hover:shadow-yellow-400/50 transform hover:scale-105 animate-bounce">
             Start Your Journey Today
           </button>
         </div>

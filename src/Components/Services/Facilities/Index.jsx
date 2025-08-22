@@ -50,7 +50,7 @@ function Facilities() {
         {/* Floating animated header */}
         <section className={`mt-10 px-8 transition-all duration-1000 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-3xl md:text-5xl font-bold text-center mb-5 text-white">
-            OUR BEST <span className="text-orange-400 animate-pulse">SERVICES</span>
+            OUR BEST <span className="text-orange-400 animate-pulse">PROGRAM</span>
           </h2>
           <div className="w-40 h-1 bg-orange-400 mx-auto mb-6 rounded-full"></div>
           <p className="text-white text-center mt-5 text-lg md:text-xl lg:text-2xl max-w-2xl mx-auto leading-relaxed">
@@ -84,7 +84,7 @@ function Facilities() {
         {/* Floating animated call-to-action */}
         <div className={`mt-16 text-center transition-all duration-1000 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <button className="px-8 py-3 bg-orange-400 text-white font-bold rounded-full hover:bg-orange-500 transition-all duration-300 shadow-lg hover:shadow-orange-400/30 animate-bounce">
-            Explore More Services
+            Explore More 
           </button>
         </div>
       </div>
