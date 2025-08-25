@@ -24,7 +24,8 @@ function Footer() {
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path fill="currentColor" d="M21 5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5zm-2.5 8.2v5.3h-2.79v-4.93a1.4 1.4 0 0 0-1.4-1.4c-.77 0-1.39.63-1.39 1.4v4.93h-2.79v-8.37h2.79v1.11c.48-.78 1.47-1.3 2.32-1.3 1.8 0 3.26 1.46 3.26 3.26zM6.88 8.56a1.686 1.686 0 0 0 0-3.37 1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 1.57v8.37H5.5v-8.37h2.77z"/>
         </svg>
-      )
+      ),
+      link:"https://www.linkedin.com/company/104864898/admin/dashboard/"
     },
     {
       name: "Twitter",
@@ -40,7 +41,8 @@ function Footer() {
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path fill="currentColor" d="M12 2.16c3.2 0 3.58 0 4.85.07a6.3 6.3 0 0 1 2.12.4 3.8 3.8 0 0 1 1.4.92 3.8 3.8 0 0 1 .92 1.4 6.3 6.3 0 0 1 .4 2.12c.06 1.27.07 1.64.07 4.85s0 3.58-.07 4.85a6.3 6.3 0 0 1-.4 2.12 3.8 3.8 0 0 1-.92 1.4 3.8 3.8 0 0 1-1.4.92 6.3 6.3 0 0 1-2.12.4c-1.27.06-1.64.07-4.85.07s-3.58 0-4.85-.07a6.3 6.3 0 0 1-2.12-.4 3.8 3.8 0 0 1-1.4-.92 3.8 3.8 0 0 1-.92-1.4 6.3 6.3 0 0 1-.4-2.12c-.06-1.27-.07-1.64-.07-4.85s0-3.58.07-4.85a6.3 6.3 0 0 1 .4-2.12 3.8 3.8 0 0 1 .92-1.4 3.8 3.8 0 0 1 1.4-.92 6.3 6.3 0 0 1 2.12-.4c1.27-.06 1.64-.07 4.85-.07zm0-2.16c-3.27 0-3.68.01-4.96.07a8.4 8.4 0 0 0-2.81.6 6 6 0 0 0-2.17 1.45 6 6 0 0 0-1.45 2.17 8.4 8.4 0 0 0-.6 2.81C.01 8.32 0 8.73 0 12s.01 3.68.07 4.96a8.4 8.4 0 0 0 .6 2.81 6 6 0 0 0 1.45 2.17 6 6 0 0 0 2.17 1.45 8.4 8.4 0 0 0 2.81.6c1.28.06 1.69.07 4.96.07s3.68-.01 4.96-.07a8.4 8.4 0 0 0 2.81-.6 6 6 0 0 0 2.17-1.45 6 6 0 0 0 1.45-2.17 8.4 8.4 0 0 0 .6-2.81c.06-1.28.07-1.69.07-4.96s-.01-3.68-.07-4.96a8.4 8.4 0 0 0-.6-2.81 6 6 0 0 0-1.45-2.17 6 6 0 0 0-2.17-1.45 8.4 8.4 0 0 0-2.81-.6C15.68.01 15.27 0 12 0zm0 5.83a6.17 6.17 0 1 0 0 12.34 6.17 6.17 0 0 0 0-12.34zm0 10.18a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-11.5a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
         </svg>
-      )
+      ),
+      link:"https://www.instagram.com/azoneinstituteof_tecnology?igsh=MTI0dGNmdzM0aTd4Mg%3D%3D"
     }
   ];
 
@@ -77,13 +79,14 @@ function Footer() {
               
              
               {/* Social links with animation */}
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 ">
                 {socialLinks.map((social, index) => (
                   <a 
                     key={social.name}
-                    href="#" 
-                    className={`w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg delay-${index * 100}`}
+                    href={social.link}
+                    className={`target="_blank"w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:text-white hover:bg-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg delay-${index * 100}`}
                     aria-label={social.name}
+                    target="_blank"
                   >
                     <span className="w-6 h-6">
                       {social.icon}
